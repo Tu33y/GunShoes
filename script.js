@@ -1,20 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            const targetId = e.currentTarget.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 80, // Adjusted for fixed header
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
     // Add scroll animations to product cards
     const productCards = document.querySelectorAll('.product-card');
     const animateOnScroll = () => {
@@ -243,6 +227,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
         chromaGrid.addEventListener('pointerleave', () => {
             gsap.to(chromaFade, { opacity: 1, duration: 0.6, overwrite: true });
+        });
+    }
+
+    // Dock effect
+    const dockContainer = document.getElementById('dock-container');
+    const dockItems = document.querySelectorAll('.dock-item');
+    const magnification = 70;
+    const distance = 200;
+    const baseItemSize = 50;
+
+    if (dockContainer && dockItems.length > 0) {
+        dockContainer.addEventListener('mousemove', (e) => {
+            const mouseX = e.pageX;
+            dockItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const itemX = rect.left + rect.width / 2;
+                const mouseDistance = mouseX - itemX;
+                let size;
+                if (Math.abs(mouseDistance) < distance) {
+                    size = baseItemSize + (magnification - baseItemSize) * (1 - Math.abs(mouseDistance) / distance);
+                } else {
+                    size = baseItemSize;
+                }
+                item.style.width = `${size}px`;
+                item.style.height = `${size}px`;
+            });
+        });
+
+        dockContainer.addEventListener('mouseleave', () => {
+            dockItems.forEach(item => {
+                item.style.width = `${baseItemSize}px`;
+                item.style.height = `${baseItemSize}px`;
+            });
+        });
+
+        dockItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = item.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     }
 });
