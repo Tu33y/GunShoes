@@ -120,11 +120,9 @@ nav ul li a:hover {
     background-color: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
+    transition: transform 0.2s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
 .product-card img {
@@ -191,13 +189,9 @@ nav ul li a:hover {
 }
 
 #gradual-blur {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
     height: 10rem;
     pointer-events: none;
-    z-index: 1000;
 }
 
 /* Footer */
