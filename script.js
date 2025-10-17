@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // SplitText animation for the hero title
+    const heroTitle = document.querySelector('.hero h1');
+    if (heroTitle) {
+        const text = heroTitle.textContent;
+        heroTitle.innerHTML = ''; // Use innerHTML to allow for spaces
+        text.split('').forEach(char => {
+            const span = document.createElement('span');
+            if (char === ' ') {
+                span.innerHTML = '&nbsp;'; // Use a non-breaking space
+            } else {
+                span.textContent = char;
+            }
+            span.style.display = 'inline-block';
+            heroTitle.appendChild(span);
+        });
+
+        gsap.from(heroTitle.querySelectorAll('span'), {
+            duration: 0.8,
+            opacity: 0,
+            y: -50,
+            rotationX: -90,
+            stagger: 0.05,
+            ease: 'power2.out',
+            delay: 0.5
+        });
+    }
+
     // Add scroll animations to product cards
     const productCards = document.querySelectorAll('.product-card');
     const animateOnScroll = () => {
