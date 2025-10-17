@@ -139,4 +139,49 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "retina_detect": true
     });
+
+    // Create the gradual blur effect
+    const createGradualBlur = () => {
+        const container = document.getElementById('gradual-blur');
+        if (!container) return;
+
+        const config = {
+            divCount: 10,
+            strength: 2,
+            position: 'bottom'
+        };
+
+        const increment = 100 / config.divCount;
+        const getGradientDirection = (position) => ({
+            top: 'to top',
+            bottom: 'to bottom',
+            left: 'to left',
+            right: 'to right'
+        }[position] || 'to bottom');
+
+        for (let i = 1; i <= config.divCount; i++) {
+            const progress = i / config.divCount;
+            const blurValue = Math.pow(2, progress * 4) * 0.0625 * config.strength;
+            const p1 = Math.round((increment * i - increment) * 10) / 10;
+            const p2 = Math.round(increment * i * 10) / 10;
+            const p3 = Math.round((increment * i + increment) * 10) / 10;
+            const p4 = Math.round((increment * i + increment * 2) * 10) / 10;
+
+            let gradient = `transparent ${p1}%, black ${p2}%`;
+            if (p3 <= 100) gradient += `, black ${p3}%`;
+            if (p4 <= 100) gradient += `, transparent ${p4}%`;
+
+            const direction = getGradientDirection(config.position);
+            const div = document.createElement('div');
+            div.style.position = 'absolute';
+            div.style.inset = '0';
+            div.style.maskImage = `linear-gradient(${direction}, ${gradient})`;
+            div.style.webkitMaskImage = `linear-gradient(${direction}, ${gradient})`;
+            div.style.backdropFilter = `blur(${blurValue.toFixed(3)}rem)`;
+            div.style.webkitBackdropFilter = `blur(${blurValue.toFixed(3)}rem)`;
+            container.appendChild(div);
+        }
+    };
+
+    createGradualBlur();
 });
