@@ -205,4 +205,44 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
         });
     });
+
+    // ChromaGrid effect
+    const chromaGrid = document.getElementById('chroma-grid');
+    const chromaFade = document.querySelector('.chroma-fade');
+
+    if (chromaGrid && chromaFade) {
+        const setX = gsap.quickSetter(chromaGrid, '--x', 'px');
+        const setY = gsap.quickSetter(chromaGrid, '--y', 'px');
+        const pos = { x: 0, y: 0 };
+
+        const { width, height } = chromaGrid.getBoundingClientRect();
+        pos.x = width / 2;
+        pos.y = height / 2;
+        setX(pos.x);
+        setY(pos.y);
+
+        const moveTo = (x, y) => {
+            gsap.to(pos, {
+                x,
+                y,
+                duration: 0.45,
+                ease: 'power3.out',
+                onUpdate: () => {
+                    setX(pos.x);
+                    setY(pos.y);
+                },
+                overwrite: true
+            });
+        };
+
+        chromaGrid.addEventListener('pointermove', (e) => {
+            const rect = chromaGrid.getBoundingClientRect();
+            moveTo(e.clientX - rect.left, e.clientY - rect.top);
+            gsap.to(chromaFade, { opacity: 0, duration: 0.25, overwrite: true });
+        });
+
+        chromaGrid.addEventListener('pointerleave', () => {
+            gsap.to(chromaFade, { opacity: 1, duration: 0.6, overwrite: true });
+        });
+    }
 });

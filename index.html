@@ -6,6 +6,7 @@
     <title>Gun Shoes</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
@@ -34,7 +35,7 @@
 
         <section id="products" class="products">
             <h2>Our Products</h2>
-            <div class="product-grid">
+            <div id="chroma-grid" class="product-grid">
                 <div class="product-card">
                     <img src="images/shoe1.jpg" alt="Futuristic Shoe 1">
                     <h3>Cyber-Glide</h3>
@@ -53,6 +54,8 @@
                     <p>Pushing the boundaries of footwear technology.</p>
                     <a href="#" class="btn">View Details</a>
                 </div>
+                <div class="chroma-overlay"></div>
+                <div class="chroma-fade"></div>
             </div>
         </section>
 
