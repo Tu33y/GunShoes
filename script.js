@@ -238,27 +238,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const baseItemSize = 50;
 
     if (dockContainer && dockItems.length > 0) {
+        const spring = { mass: 0.1, stiffness: 150, damping: 12 };
+
+        dockItems.forEach(item => {
+            const itemProxy = { size: baseItemSize };
+            gsap.to(itemProxy, {
+                size: baseItemSize,
+                ...spring,
+                onUpdate: () => {
+                    item.style.width = `${itemProxy.size}px`;
+                    item.style.height = `${itemProxy.size}px`;
+                }
+            });
+        });
+
         dockContainer.addEventListener('mousemove', (e) => {
             const mouseX = e.pageX;
             dockItems.forEach(item => {
                 const rect = item.getBoundingClientRect();
                 const itemX = rect.left + rect.width / 2;
                 const mouseDistance = mouseX - itemX;
-                let size;
+                let targetSize;
                 if (Math.abs(mouseDistance) < distance) {
-                    size = baseItemSize + (magnification - baseItemSize) * (1 - Math.abs(mouseDistance) / distance);
+                    targetSize = baseItemSize + (magnification - baseItemSize) * (1 - Math.abs(mouseDistance) / distance);
                 } else {
-                    size = baseItemSize;
+                    targetSize = baseItemSize;
                 }
-                item.style.width = `${size}px`;
-                item.style.height = `${size}px`;
+                gsap.to(item, {
+                    width: targetSize,
+                    height: targetSize,
+                    ...spring
+                });
             });
         });
 
         dockContainer.addEventListener('mouseleave', () => {
             dockItems.forEach(item => {
-                item.style.width = `${baseItemSize}px`;
-                item.style.height = `${baseItemSize}px`;
+                gsap.to(item, {
+                    width: baseItemSize,
+                    height: baseItemSize,
+                    ...spring
+                });
             });
         });
 
