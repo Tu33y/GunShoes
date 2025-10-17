@@ -1,0 +1,102 @@
+/* Page Header */
+.page-header {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 60px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.page-header p {
+    font-size: 20px;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+/* Technology Page */
+.technology-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.tech-feature-card {
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(127, 0, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tech-feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(127, 0, 255, 0.3);
+}
+
+.tech-icon {
+    margin-bottom: 20px;
+    color: #7F00FF;
+}
+
+.tech-feature-card h3 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.tech-feature-card p {
+    font-size: 16px;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+/* Product Detail Page */
+.product-detail-page {
+    padding: 120px 20px;
+}
+
+.product-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.product-image-container img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.product-info-container h1 {
+    font-size: 48px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 28px;
+    color: #7F00FF;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
