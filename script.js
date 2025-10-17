@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     particlesJS('particles-js', {
         "particles": {
             "number": {
-                "value": 80,
+                "value": 120,
                 "density": {
                     "enable": true,
                     "value_area": 800
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             "move": {
                 "enable": true,
-                "speed": 6,
+                "speed": 8,
                 "direction": "none",
                 "random": false,
                 "straight": false,
@@ -146,8 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return;
 
         const config = {
-            divCount: 10,
-            strength: 2,
+            divCount: 12,
+            strength: 4,
             position: 'bottom'
         };
 
@@ -195,10 +195,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (x - centerX) / -10;
+            const rotateX = (y - centerY) / 5;
+            const rotateY = (x - centerX) / -5;
 
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
         });
 
         card.addEventListener('mouseleave', () => {

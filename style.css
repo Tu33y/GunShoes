@@ -43,6 +43,7 @@ nav {
     font-weight: bold;
     color: #7F00FF;
     text-decoration: none;
+    text-shadow: 0 0 5px #7F00FF, 0 0 10px #7F00FF, 0 0 15px #7F00FF;
 }
 
 nav ul {
@@ -75,6 +76,7 @@ nav ul li a:hover {
     font-size: 60px;
     color: #ffffff;
     margin-bottom: 20px;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
 }
 
 .hero-content p {
@@ -90,7 +92,8 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px #7F00FF, 0 0 10px #7F00FF, 0 0 15px #7F00FF;
 }
 
 .btn:hover {
@@ -106,6 +109,7 @@ nav ul li a:hover {
 .products h2 {
     font-size: 40px;
     margin-bottom: 50px;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
 }
 
 .product-grid {
@@ -147,6 +151,7 @@ nav ul li a:hover {
 .features h2 {
     font-size: 40px;
     margin-bottom: 50px;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
 }
 
 .features-grid {
@@ -176,6 +181,7 @@ nav ul li a:hover {
 .contact h2 {
     font-size: 40px;
     margin-bottom: 50px;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
 }
 
 .contact a {
