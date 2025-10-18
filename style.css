@@ -117,6 +117,28 @@ body {
 }
 
 .product-card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 24px;
+    color: #7F00FF;
+    margin-bottom: 10px;
+}
+
+/* Animated Card Styles */
+.animated-card {
     width: 100%;
     aspect-ratio: 3/4;
     background: #1a1a1a;
@@ -129,14 +151,14 @@ body {
     position: relative;
 }
 
-.product-card:hover {
+.animated-card:hover {
     border-radius: 15px;
     cursor: pointer;
     transform: scale(1.05);
     box-shadow: 0px 0px 20px 8px rgba(127, 0, 255, 0.5);
 }
 
-.product-card .first-content {
+.animated-card .first-content {
     height: 100%;
     width: 100%;
     transition: all 0.4s;
@@ -150,7 +172,7 @@ body {
     background-position: center;
 }
 
-.product-card .first-content h3 {
+.animated-card .first-content h3 {
     font-size: 28px;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(0,0,0,0.8);
@@ -160,12 +182,12 @@ body {
     width: 100%;
 }
 
-.product-card:hover .first-content {
+.animated-card:hover .first-content {
     height: 0px;
     opacity: 0;
 }
 
-.product-card .second-content {
+.animated-card .second-content {
     height: 0%;
     width: 100%;
     opacity: 0;
@@ -182,20 +204,20 @@ body {
     box-sizing: border-box;
 }
 
-.product-card:hover .second-content {
+.animated-card:hover .second-content {
     opacity: 1;
     height: 100%;
     font-size: 1rem;
     transform: scale(1);
 }
 
-.product-card .second-content h3 {
+.animated-card .second-content h3 {
     font-size: 24px;
     color: #7F00FF;
     margin-bottom: 0;
 }
 
-.product-card .second-content p {
+.animated-card .second-content p {
     font-size: 16px;
     text-align: center;
     color: #cccccc;
