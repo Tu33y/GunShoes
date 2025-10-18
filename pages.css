@@ -100,3 +100,112 @@
     line-height: 1.6;
     margin-bottom: 40px;
 }
+
+/* Order Page */
+.order-page {
+    padding: 100px 5%;
+}
+
+.order-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.order-form .form-section {
+    margin-bottom: 30px;
+}
+
+.order-form h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.order-form .form-group {
+    margin-bottom: 20px;
+}
+
+.order-form label {
+    display: block;
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+.order-form input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.order-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+/* Newsletter Page */
+.newsletter-page {
+    padding: 100px 5%;
+}
+
+.newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-form .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.newsletter-form label {
+    display: none; /* Hidden for minimalist design */
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form input::placeholder {
+    color: #888;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+.newsletter-form .btn {
+    width: auto;
+    padding: 15px 40px;
+}
