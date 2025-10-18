@@ -209,3 +209,240 @@
     width: auto;
     padding: 15px 40px;
 }
+
+/* Cart Page */
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.cart-items {
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(127, 0, 255, 0.3);
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cart-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.item-info h3 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    color: #ffffff;
+}
+
+.item-info .item-price {
+    font-size: 16px;
+    color: #cccccc;
+}
+
+.item-quantity input {
+    width: 50px;
+    padding: 8px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #fff;
+}
+
+.item-total-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7F00FF;
+}
+
+.cart-summary {
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(127, 0, 255, 0.3);
+    height: fit-content;
+}
+
+.cart-summary h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.summary-row.total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #7F00FF;
+    margin-top: 15px;
+}
+
+.cart-summary hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 20px 0;
+}
+
+#checkout-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#checkout-btn.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    background-color: #333;
+    color: #888;
+    border-color: #444;
+    box-shadow: none;
+}
+
+#checkout-btn.disabled::after {
+    display: none;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.remove-btn:hover {
+    color: #ff0000;
+}
+
+/* Checkout Page */
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 0 20px;
+    align-items: flex-start;
+}
+
+.checkout-form {
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(127, 0, 255, 0.3);
+}
+
+.checkout-form .form-section {
+    margin-bottom: 30px;
+}
+
+.checkout-form h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.checkout-form .form-group {
+    margin-bottom: 20px;
+}
+
+.checkout-form label {
+    display: block;
+    color: #cccccc;
+    margin-bottom: 8px;
+}
+
+.checkout-form input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.checkout-form input:focus {
+    outline: none;
+    border-color: #7F00FF;
+    box-shadow: 0 0 15px rgba(127, 0, 255, 0.5);
+}
+
+.checkout-form .btn {
+    width: 100%;
+    text-align: center;
+}
+
+.order-summary {
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(127, 0, 255, 0.3);
+    height: fit-content;
+}
+
+.order-summary h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+#summary-items .summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#summary-items .summary-item-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#summary-items .summary-item-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+#summary-items .summary-item-name {
+    font-size: 16px;
+}
+
+#summary-items .summary-item-price {
+    font-size: 16px;
+    font-weight: bold;
+}

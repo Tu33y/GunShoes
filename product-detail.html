@@ -13,16 +13,16 @@
     <div id="particles-js"></div>
 
     <main>
-        <section id="product-detail-page" class="product-detail-page">
+<section id="product-detail-page" class="product-detail-page" data-product-id="1">
             <div class="product-detail-container">
                 <div class="product-image-container">
                     <img src="images/shoe1.jpg" alt="Cyber-Glide Shoe" class="main-product-image">
                 </div>
                 <div class="product-info-container">
-                    <h1>Cyber-Glide</h1>
+                    <h1 class="product-name">Cyber-Glide</h1>
                     <p class="product-price">$799.99</p>
                     <p class="product-description">Experience the next generation of footwear with the Cyber-Glide. Featuring our proprietary nano-fiber weave for unparalleled durability and a kinetic energy return system, these shoes don't just move with you—they propel you. The integrated smart sensors provide real-time feedback to help you optimize your performance, while the sleek, aerodynamic design ensures you'll look as good as you feel.</p>
-                    <a href="#" class="btn">Buy Now</a>
+                    <a href="#" id="add-to-cart-btn" class="btn">Add to Cart</a>
                 </div>
             </div>
         </section>
@@ -43,8 +43,8 @@
         <a href="technology.html" class="dock-item" title="Technology">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
         </a>
-        <a href="order.html" class="dock-item" title="Order">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        <a href="cart.html" class="dock-item" title="Cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
         </a>
         <a href="newsletter.html" class="dock-item" title="Newsletter">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
@@ -52,5 +52,18 @@
     </nav>
 
     <script src="script.js"></script>
+    <script src="cart-logic.js"></script>
+    <script>
+        document.getElementById('add-to-cart-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            const productSection = document.getElementById('product-detail-page');
+            const productId = parseInt(productSection.dataset.productId, 10);
+            const productName = productSection.querySelector('.product-name').textContent;
+            const productPrice = parseFloat(productSection.querySelector('.product-price').textContent.replace('$', ''));
+            const productImage = productSection.querySelector('.main-product-image').src;
+
+            addToCart(productId, productName, productPrice, productImage);
+        });
+    </script>
 </body>
 </html>
