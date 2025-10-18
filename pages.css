@@ -446,3 +446,62 @@
     font-size: 16px;
     font-weight: bold;
 }
+
+/* New Credit Card Form Styles */
+.credit-card-form {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(127, 0, 255, 0.4);
+    box-shadow: 0 0 20px rgba(127, 0, 255, 0.2);
+}
+
+.card-row, .card-row-split {
+    display: flex;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.card-row-split {
+    justify-content: space-between;
+}
+
+.card-input {
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    font-size: 16px;
+    font-weight: 600;
+    caret-color: #7F00FF;
+    padding: 0 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-input.full-width {
+    flex-grow: 1;
+}
+
+.card-input:focus {
+    border-color: #7F00FF;
+    box-shadow: 0 0 15px rgba(127, 0, 255, 0.5);
+}
+
+.card-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 45px;
+    background-color: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.mastercard-logo path:nth-child(1) { fill: #a367ff; }
+.mastercard-logo path:nth-child(2) { fill: #6a00ff; }
+.mastercard-logo path:nth-child(3) { fill: #8a2be2; }
