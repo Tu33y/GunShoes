@@ -505,3 +505,168 @@
 .mastercard-logo path:nth-child(1) { fill: #a367ff; }
 .mastercard-logo path:nth-child(2) { fill: #6a00ff; }
 .mastercard-logo path:nth-child(3) { fill: #8a2be2; }
+
+/* Payment Options */
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.payment-btn {
+    height: 55px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 11px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #cccccc;
+}
+
+.payment-btn:hover {
+    background-color: rgba(127, 0, 255, 0.2);
+    border-color: rgba(127, 0, 255, 0.5);
+    color: #ffffff;
+}
+
+.payment-btn svg {
+    height: 24px;
+    width: auto;
+}
+
+.separator {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 15px;
+    align-items: center;
+    color: #8B8E98;
+    margin: 20px 0;
+}
+
+.separator p {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.separator .line {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Login Page */
+.login-container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    font-family: 'Orbitron', sans-serif;
+    border: 1px solid rgba(127, 0, 255, 0.3);
+}
+
+.login-form .input-group > label {
+    color: #cccccc;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.login-form .input-field {
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    transition: 0.2s ease-in-out;
+    background-color: #0d0d0d;
+    color: #8B8E98;
+}
+
+.login-form .input {
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: #e0e0e0;
+    font-size: 16px;
+}
+
+.login-form .input:focus {
+    outline: none;
+}
+
+.login-form .input-field:focus-within {
+    border-color: #7F00FF;
+    box-shadow: 0 0 15px rgba(127, 0, 255, 0.5);
+    color: #ffffff;
+}
+
+.login-form .form-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.login-form .form-options > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.login-form .form-options label {
+    color: #cccccc;
+    font-weight: 400;
+}
+
+.login-form .forgot-password {
+    color: #7F00FF;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login-form .submit-btn {
+    margin: 10px 0;
+    background-color: #7F00FF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.login-form .submit-btn:hover {
+    background-color: #9d4bff;
+    box-shadow: 0 0 15px rgba(127, 0, 255, 0.7);
+}
+
+.login-form .signup-link {
+    text-align: center;
+    color: #cccccc;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.login-form .signup-link a {
+    color: #7F00FF;
+    text-decoration: none;
+    font-weight: 600;
+}

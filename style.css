@@ -117,24 +117,89 @@ body {
 }
 
 .product-card {
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.2s;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-}
-
-.product-card img {
     width: 100%;
+    aspect-ratio: 3/4;
+    background: #1a1a1a;
+    transition: all 0.4s;
     border-radius: 10px;
-    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px 2px rgba(127, 0, 255, 0.3);
+    font-size: 30px;
+    font-weight: 900;
+    overflow: hidden;
+    position: relative;
 }
 
-.product-card h3 {
+.product-card:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px 8px rgba(127, 0, 255, 0.5);
+}
+
+.product-card .first-content {
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-card .first-content h3 {
+    font-size: 28px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.product-card:hover .first-content {
+    height: 0px;
+    opacity: 0;
+}
+
+.product-card .second-content {
+    height: 0%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 15px;
+    transition: all 0.4s;
+    font-size: 0px;
+    transform: scale(0.5);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product-card:hover .second-content {
+    opacity: 1;
+    height: 100%;
+    font-size: 1rem;
+    transform: scale(1);
+}
+
+.product-card .second-content h3 {
     font-size: 24px;
     color: #7F00FF;
-    margin-bottom: 10px;
+    margin-bottom: 0;
+}
+
+.product-card .second-content p {
+    font-size: 16px;
+    text-align: center;
+    color: #cccccc;
+    font-weight: 400;
 }
 
 /* Features Section */
