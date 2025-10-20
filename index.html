@@ -91,11 +91,17 @@
         <a href="newsletter.html" class="dock-item" title="Newsletter">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
         </a>
-        <button id="theme-switcher" class="dock-item" title="Switch Theme">
-            <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        </button>
+        <label class="switch">
+          <input id="theme-switcher" type="checkbox">
+          <span class="slider">
+              <div class="star star_1"></div>
+              <div class="star star_2"></div>
+              <div class="star star_3"></div>
+              <svg class="cloud" fill="#FFFFFF" height="100px" viewBox="0 0 100 100" version="1.1" width="100px" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 67.421875 22.988281 C 67.421875 22.988281 67.421875 22.988281 67.421875 22.988281 C 65.050781 16.355469 58.261719 11.992188 50.5 11.992188 C 42.738281 11.992188 35.949219 16.355469 33.578125 22.988281 C 33.578125 22.988281 33.578125 22.988281 33.578125 22.988281 C 23.480469 24.347656 15.992188 32.859375 15.992188 43.492188 C 15.992188 54.757812 24.933594 63.667969 36.222656 63.667969 L 65.710938 63.667969 C 74.53125 63.667969 81.992188 56.242188 81.992188 47.460938 C 81.992188 38.679688 74.53125 31.320312 65.710938 31.320312 C 65.710938 31.320312 65.710938 31.320312 65.710938 31.320312 C 66.570312 28.53125 67.421875 25.683594 67.421875 22.988281 Z M 67.421875 22.988281 " />
+              </svg>
+          </span>
+        </label>
     </nav>
 
     <script src="script.js"></script>
