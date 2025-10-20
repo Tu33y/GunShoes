@@ -19,10 +19,26 @@
                 <p>Complete your purchase of the future of footwear.</p>
             </div>
 
-            <div class="order-container">
-                <form id="order-form" class="order-form">
-                    <div class="form-section">
-                        <h2>Shipping Information</h2>
+            <div class="checkout-container">
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">
+                        <span>Shipping</span>
+                        <div class="progress-dot"></div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <span>Payment</span>
+                        <div class="progress-dot"></div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <span>Confirmation</span>
+                        <div class="progress-dot"></div>
+                    </div>
+                </div>
+
+                <form id="checkout-form" class="checkout-form">
+                    <!-- Step 1: Shipping Information -->
+                    <div class="form-step active" id="step-1">
+                        <h2 class="step-title">Shipping Information</h2>
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
@@ -43,10 +59,14 @@
                             <label for="country">Country</label>
                             <input type="text" id="country" name="country" required>
                         </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn next-step">Next</button>
+                        </div>
                     </div>
 
-                    <div class="form-section">
-                        <h2>Payment Details</h2>
+                    <!-- Step 2: Payment Details -->
+                    <div class="form-step" id="step-2">
+                        <h2 class="step-title">Payment Details</h2>
                         <div class="form-group">
                             <label for="card-number">Card Number</label>
                             <input type="text" id="card-number" name="card-number" required>
@@ -59,9 +79,21 @@
                             <label for="cvv">CVV</label>
                             <input type="text" id="cvv" name="cvv" required>
                         </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn prev-step">Back</button>
+                            <button type="button" class="btn next-step">Pay Now</button>
+                        </div>
                     </div>
 
-                    <button type="submit" class="btn">Place Order</button>
+                    <!-- Step 3: Confirmation -->
+                    <div class="form-step" id="step-3">
+                        <h2 class="step-title">Order Confirmed</h2>
+                        <div class="confirmation-message">
+                            <p>Thank you for your purchase!</p>
+                            <p>Your order number is <span id="order-number"></span>.</p>
+                            <p>A confirmation email has been sent to your address.</p>
+                        </div>
+                    </div>
                 </form>
             </div>
         </section>
@@ -91,5 +123,6 @@
     </nav>
 
     <script src="script.js"></script>
+    <script src="checkout.js"></script>
 </body>
 </html>
