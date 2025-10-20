@@ -135,4 +135,63 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // Search functionality for products page
+    const searchBar = document.getElementById('search-bar');
+    if (searchBar) {
+        const productCards = document.querySelectorAll('.product-card');
+        const suggestionsContainer = document.getElementById('suggestions-container');
+        const productNames = Array.from(productCards).map(card => card.querySelector('h3').textContent);
+
+        const filterProducts = () => {
+            const searchTerm = searchBar.value.toLowerCase();
+            productCards.forEach(card => {
+                const productName = card.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        };
+
+        const showSuggestions = () => {
+            const searchTerm = searchBar.value.toLowerCase();
+            suggestionsContainer.innerHTML = '';
+            if (searchTerm.length === 0) {
+                suggestionsContainer.style.display = 'none';
+                return;
+            }
+
+            const filteredNames = productNames.filter(name => name.toLowerCase().includes(searchTerm));
+
+            if (filteredNames.length > 0) {
+                filteredNames.forEach(name => {
+                    const item = document.createElement('div');
+                    item.classList.add('suggestion-item');
+                    item.textContent = name;
+                    item.addEventListener('click', () => {
+                        searchBar.value = name;
+                        suggestionsContainer.style.display = 'none';
+                        filterProducts();
+                    });
+                    suggestionsContainer.appendChild(item);
+                });
+                suggestionsContainer.style.display = 'block';
+            } else {
+                suggestionsContainer.style.display = 'none';
+            }
+        };
+
+        searchBar.addEventListener('input', () => {
+            filterProducts();
+            showSuggestions();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!suggestionsContainer.contains(e.target) && e.target !== searchBar) {
+                suggestionsContainer.style.display = 'none';
+            }
+        });
+    }
 });
