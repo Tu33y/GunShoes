@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber-Glide - Gun Shoes</title>
+    <title>Account - Gun Shoes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -13,17 +13,37 @@
     <div id="particles-js"></div>
 
     <main>
-<section id="product-detail-page" class="product-detail-page" data-product-id="1">
-            <div class="product-detail-container">
-                <div class="product-image-container">
-                    <img src="images/shoe1.jpg" alt="Cyber-Glide Shoe" class="main-product-image">
-                </div>
-                <div class="product-info-container">
-                    <h1 class="product-name">Cyber-Glide</h1>
-                    <p class="product-price">$799.99</p>
-                    <p class="product-description">Experience the next generation of footwear with the Cyber-Glide. Featuring our proprietary nano-fiber weave for unparalleled durability and a kinetic energy return system, these shoes don't just move with you—they propel you. The integrated smart sensors provide real-time feedback to help you optimize your performance, while the sleek, aerodynamic design ensures you'll look as good as you feel.</p>
-                    <a href="#" id="add-to-cart-btn" class="btn">Add to Cart</a>
-                </div>
+        <section id="login-page" class="login-page">
+             <div class="page-header">
+                <h1>Account</h1>
+                <p>Login or create an account to manage your orders.</p>
+            </div>
+            <div class="login-container">
+                <form class="login-form">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <div class="input-field">
+                             <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m22 6.251-9.986 6.964a.5.5 0 0 1-.522.001l-10.002-6.964a.5.5 0 0 1 .51-.882h20a.5.5 0 0 1 .5 1.002v-.121zm-20 1.521v10.478a.5.5 0 0 0 .5.5h20a.5.5 0 0 0 .5-.5v-10.478l-10.493 7.302a.5.5 0 0 1-.521-.001z" fill="currentColor"></path></svg>
+                            <input type="email" id="email" name="email" class="input" placeholder="name@email.com" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-field">
+                            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m12.002 14.518c-1.381 0-2.5-1.119-2.5-2.5s1.119-2.5 2.5-2.5 2.5 1.119 2.5 2.5-1.119 2.5-2.5 2.5zm6.498-2.5c0 3.59-2.91 6.5-6.5 6.5s-6.5-2.91-6.5-6.5 2.91-6.5 6.5-6.5 6.5 2.91 6.5 6.5zm-2.001 0c0-2.485-2.015-4.5-4.5-4.5s-4.5 2.015-4.5 4.5 2.015 4.5 4.5 4.5 4.5-2.015 4.5-4.5z" fill="currentColor"></path></svg>
+                            <input type="password" id="password" name="password" class="input" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <div>
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="submit-btn">Sign In</button>
+                    <p class="signup-link">Not a member? <a href="#">Create an account</a></p>
+                </form>
             </div>
         </section>
         <div id="gradual-blur"></div>
@@ -53,17 +73,5 @@
 
     <script src="script.js"></script>
     <script src="cart-logic.js"></script>
-    <script>
-        document.getElementById('add-to-cart-btn').addEventListener('click', (e) => {
-            e.preventDefault();
-            const productSection = document.getElementById('product-detail-page');
-            const productId = parseInt(productSection.dataset.productId, 10);
-            const productName = productSection.querySelector('.product-name').textContent;
-            const productPrice = parseFloat(productSection.querySelector('.product-price').textContent.replace('$', ''));
-            const productImage = productSection.querySelector('.main-product-image').src;
-
-            addToCart(productId, productName, productPrice, productImage);
-        });
-    </script>
 </body>
 </html>

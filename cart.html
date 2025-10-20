@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber-Glide - Gun Shoes</title>
+    <title>Shopping Cart - Gun Shoes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -13,16 +13,34 @@
     <div id="particles-js"></div>
 
     <main>
-<section id="product-detail-page" class="product-detail-page" data-product-id="1">
-            <div class="product-detail-container">
-                <div class="product-image-container">
-                    <img src="images/shoe1.jpg" alt="Cyber-Glide Shoe" class="main-product-image">
+        <section id="cart-page" class="cart-page">
+            <div class="page-header">
+                <h1>Shopping Cart</h1>
+                <p>Review your items and proceed to checkout.</p>
+            </div>
+
+            <div class="cart-container">
+                <div id="cart-items" class="cart-items">
+                    <!-- Cart items will be dynamically inserted here by JavaScript -->
+                    <p>Your cart is empty.</p>
                 </div>
-                <div class="product-info-container">
-                    <h1 class="product-name">Cyber-Glide</h1>
-                    <p class="product-price">$799.99</p>
-                    <p class="product-description">Experience the next generation of footwear with the Cyber-Glide. Featuring our proprietary nano-fiber weave for unparalleled durability and a kinetic energy return system, these shoes don't just move with you—they propel you. The integrated smart sensors provide real-time feedback to help you optimize your performance, while the sleek, aerodynamic design ensures you'll look as good as you feel.</p>
-                    <a href="#" id="add-to-cart-btn" class="btn">Add to Cart</a>
+
+                <div class="cart-summary">
+                    <h2>Summary</h2>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="cart-shipping">FREE</span>
+                    </div>
+                    <hr>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="cart-total">$0.00</span>
+                    </div>
+                    <a href="checkout.html" id="checkout-btn" class="btn disabled">Proceed to Checkout</a>
                 </div>
             </div>
         </section>
@@ -53,17 +71,6 @@
 
     <script src="script.js"></script>
     <script src="cart-logic.js"></script>
-    <script>
-        document.getElementById('add-to-cart-btn').addEventListener('click', (e) => {
-            e.preventDefault();
-            const productSection = document.getElementById('product-detail-page');
-            const productId = parseInt(productSection.dataset.productId, 10);
-            const productName = productSection.querySelector('.product-name').textContent;
-            const productPrice = parseFloat(productSection.querySelector('.product-price').textContent.replace('$', ''));
-            const productImage = productSection.querySelector('.main-product-image').src;
-
-            addToCart(productId, productName, productPrice, productImage);
-        });
-    </script>
+    <script src="cart.js"></script>
 </body>
 </html>
