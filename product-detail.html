@@ -16,13 +16,34 @@
         <section id="product-detail-page" class="product-detail-page">
             <div class="product-detail-container">
                 <div class="product-image-container">
-                    <img src="images/shoe1.jpg" alt="Cyber-Glide Shoe" class="main-product-image">
+                    <img src="images/shoe1.jpg" alt="Cyber-Glide Shoe" class="main-product-image" data-dark-src="images/shoe1.jpg" data-light-src="images/shoe2.jpg">
                 </div>
                 <div class="product-info-container">
                     <h1>Cyber-Glide</h1>
                     <p class="product-price">$799.99</p>
                     <p class="product-description">Experience the next generation of footwear with the Cyber-Glide. Featuring our proprietary nano-fiber weave for unparalleled durability and a kinetic energy return system, these shoes don't just move with you—they propel you. The integrated smart sensors provide real-time feedback to help you optimize your performance, while the sleek, aerodynamic design ensures you'll look as good as you feel.</p>
-                    <a href="#" class="btn">Buy Now</a>
+
+                    <div class="product-options">
+                        <div class="size-selector">
+                            <label for="size">Size:</label>
+                            <select name="size" id="size">
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42" selected>42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                            </select>
+                        </div>
+                        <div class="color-selector">
+                            <label>Color:</label>
+                            <button class="color-btn active" data-color="dark">Dark</button>
+                            <button class="color-btn" data-color="light">Light</button>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn" id="add-to-cart-btn">Add to Cart</a>
                 </div>
             </div>
         </section>

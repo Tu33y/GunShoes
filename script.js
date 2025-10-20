@@ -135,4 +135,50 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // --- Product Detail Page Logic ---
+    const productDetailPage = document.getElementById('product-detail-page');
+    if (productDetailPage) {
+        const mainImage = productDetailPage.querySelector('.main-product-image');
+        const colorButtons = productDetailPage.querySelectorAll('.color-btn');
+        const addToCartButton = document.getElementById('add-to-cart-btn');
+
+        // Color selection
+        colorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                colorButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to the clicked button
+                button.classList.add('active');
+
+                const selectedColor = button.dataset.color;
+                if (selectedColor === 'light') {
+                    mainImage.src = mainImage.dataset.lightSrc;
+                } else {
+                    mainImage.src = mainImage.dataset.darkSrc;
+                }
+            });
+        });
+
+        // Add to cart
+        addToCartButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sizeSelector = document.getElementById('size');
+            const selectedSize = sizeSelector.value;
+            const selectedColor = document.querySelector('.color-btn.active').dataset.color;
+
+            const product = {
+                name: "Cyber-Glide",
+                price: 799.99,
+                size: selectedSize,
+                color: selectedColor,
+                image: document.querySelector('.main-product-image').src
+            };
+
+            // For now, we'll just log the product to the console
+            // In a real application, this would be added to a cart object or sent to a server
+            console.log('Product added to cart:', product);
+            alert(`Added Cyber-Glide (Size: ${selectedSize}, Color: ${selectedColor}) to your cart!`);
+        });
+    }
 });
