@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gun Shoes</title>
+    <title>Account - Gun Shoes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
@@ -12,97 +13,38 @@
     <div id="particles-js"></div>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <h1>Step into the Future</h1>
-                <p>Discover our exclusive collection of luxury technological shoes.</p>
-                <a href="#" class="btn">Explore Now</a>
+        <section id="login-page" class="login-page">
+             <div class="page-header">
+                <h1>Account</h1>
+                <p>Login or create an account to manage your orders.</p>
             </div>
-        </section>
-
-        <section id="products" class="products">
-            <h2>Our Products</h2>
-            <div id="chroma-grid" class="product-grid">
-                <div class="product-card">
-                    <img src="images/shoe1.jpg" alt="Futuristic Shoe 1">
-                    <h3>Cyber-Glide</h3>
-                    <p>Experience the ultimate in comfort and style.</p>
-                    <a href="product-detail.html" class="btn">View Details</a>
-                </div>
-                <div class="product-card">
-                    <img src="images/shoe2.jpg" alt="Futuristic Shoe 2">
-                    <h3>Aero-Stride</h3>
-                    <p>Lightweight and designed for performance.</p>
-                    <a href="product-detail.html" class="btn">View Details</a>
-                </div>
-                <div class="product-card">
-                    <img src="images/shoe3.jpg" alt="Futuristic Shoe 3">
-                    <h3>Nova-Tread</h3>
-                    <p>Pushing the boundaries of footwear technology.</p>
-                    <a href="product-detail.html" class="btn">View Details</a>
-                </div>
-                <div class="chroma-overlay"></div>
-                <div class="chroma-fade"></div>
+            <div class="login-container">
+                <form class="login-form">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <div class="input-field">
+                             <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m22 6.251-9.986 6.964a.5.5 0 0 1-.522.001l-10.002-6.964a.5.5 0 0 1 .51-.882h20a.5.5 0 0 1 .5 1.002v-.121zm-20 1.521v10.478a.5.5 0 0 0 .5.5h20a.5.5 0 0 0 .5-.5v-10.478l-10.493 7.302a.5.5 0 0 1-.521-.001z" fill="currentColor"></path></svg>
+                            <input type="email" id="email" name="email" class="input" placeholder="name@email.com" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-field">
+                            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m12.002 14.518c-1.381 0-2.5-1.119-2.5-2.5s1.119-2.5 2.5-2.5 2.5 1.119 2.5 2.5-1.119 2.5-2.5 2.5zm6.498-2.5c0 3.59-2.91 6.5-6.5 6.5s-6.5-2.91-6.5-6.5 2.91-6.5 6.5-6.5 6.5 2.91 6.5 6.5zm-2.001 0c0-2.485-2.015-4.5-4.5-4.5s-4.5 2.015-4.5 4.5 2.015 4.5 4.5 4.5 4.5-2.015 4.5-4.5z" fill="currentColor"></path></svg>
+                            <input type="password" id="password" name="password" class="input" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <div>
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="submit-btn">Sign In</button>
+                    <p class="signup-link">Not a member? <a href="#">Create an account</a></p>
+                </form>
             </div>
-        </section>
-
-        <section id="featured-products" class="products">
-            <h2>Featured Products</h2>
-            <div class="product-grid">
-                <div class="animated-card">
-                    <div class="first-content" style="background-image: url('images/shoe4.jpg')">
-                        <h3>Quantum-Leap</h3>
-                    </div>
-                    <div class="second-content">
-                        <h3>Quantum-Leap</h3>
-                        <p>A new dimension in responsive footwear.</p>
-                        <a href="product-detail.html" class="btn">View Details</a>
-                    </div>
-                </div>
-                <div class="animated-card">
-                    <div class="first-content" style="background-image: url('images/shoe5.jpg')">
-                        <h3>Vortex-Pulse</h3>
-                    </div>
-                    <div class="second-content">
-                        <h3>Vortex-Pulse</h3>
-                        <p>Energize your every step with kinetic feedback.</p>
-                        <a href="product-detail.html" class="btn">View Details</a>
-                    </div>
-                </div>
-                <div class="animated-card">
-                    <div class="first-content" style="background-image: url('images/shoe6.jpg')">
-                        <h3>Chrono-Shift</h3>
-                    </div>
-                    <div class="second-content">
-                        <h3>Chrono-Shift</h3>
-                        <p>Adaptable design for any environment.</p>
-                        <a href="product-detail.html" class="btn">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="features">
-            <h2>Features</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <h3>Advanced Materials</h3>
-                    <p>Crafted from next-generation, sustainable materials.</p>
-                </div>
-                <div class="feature">
-                    <h3>Smart Technology</h3>
-                    <p>Integrated with smart sensors for a personalized experience.</p>
-                </div>
-                <div class="feature">
-                    <h3>Futuristic Design</h3>
-                    <p>Sleek, modern aesthetics that make a statement.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2>Contact Us</h2>
-            <p>Email us at <a href="mailto:contact@gunshoes.com">contact@gunshoes.com</a></p>
         </section>
         <div id="gradual-blur"></div>
     </main>
@@ -144,5 +86,6 @@
     </nav>
 
     <script src="script.js"></script>
+    <script src="cart-logic.js"></script>
 </body>
 </html>

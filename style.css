@@ -137,6 +137,93 @@ body {
     margin-bottom: 10px;
 }
 
+/* Animated Card Styles */
+.animated-card {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: #1a1a1a;
+    transition: all 0.4s;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px rgba(127, 0, 255, 0.3);
+    font-size: 30px;
+    font-weight: 900;
+    overflow: hidden;
+    position: relative;
+}
+
+.animated-card:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px 8px rgba(127, 0, 255, 0.5);
+}
+
+.animated-card .first-content {
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+.animated-card .first-content h3 {
+    font-size: 28px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.animated-card:hover .first-content {
+    height: 0px;
+    opacity: 0;
+}
+
+.animated-card .second-content {
+    height: 0%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 15px;
+    transition: all 0.4s;
+    font-size: 0px;
+    transform: scale(0.5);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.animated-card:hover .second-content {
+    opacity: 1;
+    height: 100%;
+    font-size: 1rem;
+    transform: scale(1);
+}
+
+.animated-card .second-content h3 {
+    font-size: 24px;
+    color: #7F00FF;
+    margin-bottom: 0;
+}
+
+.animated-card .second-content p {
+    font-size: 16px;
+    text-align: center;
+    color: #cccccc;
+    font-weight: 400;
+}
+
 /* Features Section */
 .features {
     background-color: #1a1a1a;
@@ -290,7 +377,163 @@ body {
     border-radius: 10px;
     text-decoration: none;
     transition: all 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
+
+/* From Uiverse.io by JustCode14 */
+/* Theme Switch */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 4em;
+  height: 2.2em;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2a2a2a;
+  transition: 0.4s;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.2em;
+  width: 1.2em;
+  border-radius: 20px;
+  left: 0.5em;
+  bottom: 0.5em;
+  transition: 0.4s;
+  transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
+  box-shadow: inset 8px -4px 0px 0px #fff;
+}
+
+.switch input:checked + .slider {
+  background-color: #00a6ff;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.8em);
+  box-shadow: inset 15px -4px 0px 15px #ffcf48;
+}
+
+.star {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  width: 5px;
+  transition: all 0.4s;
+  height: 5px;
+}
+
+.star_1 {
+  left: 2.5em;
+  top: 0.5em;
+}
+
+.star_2 {
+  left: 2.2em;
+  top: 1.2em;
+}
+
+.star_3 {
+  left: 3em;
+  top: 0.9em;
+}
+
+.switch input:checked ~ .slider .star {
+  opacity: 0;
+}
+
+.cloud {
+  width: 3.5em;
+  position: absolute;
+  bottom: -1.4em;
+  left: -1.1em;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.switch input:checked ~ .slider .cloud {
+  opacity: 1;
+}
+
+/* Theme Variables */
+:root {
+    --background-color-dark: #000000;
+    --text-color-dark: #e0e0e0;
+    --card-bg-dark: #1a1a1a;
+    --primary-color-dark: #7F00FF;
+    --glow-color-dark: rgb(217, 176, 255);
+
+    --background-color-light: #f0f0f0;
+    --text-color-light: #333333;
+    --card-bg-light: #ffffff;
+    --primary-color-light: #6a00d9;
+    --glow-color-light: rgb(120, 40, 200);
+}
+
+body.light-theme {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+body.light-theme #particles-js {
+    display: none;
+}
+
+body.light-theme .product-card,
+body.light-theme .features,
+body.light-theme footer {
+    background-color: var(--card-bg-light);
+    color: var(--text-color-light);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body.light-theme .product-card h3,
+body.light-theme .feature h3,
+body.light-theme .contact a {
+    color: var(--primary-color-light);
+}
+
+body.light-theme .hero-content h1,
+body.light-theme .hero-content p,
+body.light-theme .products h2,
+body.light-theme .features h2,
+body.light-theme .contact h2 {
+    color: var(--text-color-light);
+    text-shadow: none;
+}
+
+body.light-theme .btn {
+    --glow-color: var(--glow-color-light);
+    --btn-color: var(--primary-color-light);
+    color: #fff;
+    background-color: var(--btn-color);
+}
+
 
 /* Footer */
 footer {
