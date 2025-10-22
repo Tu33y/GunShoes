@@ -3,15 +3,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButtons = document.querySelectorAll('.prev-step');
     const formSteps = document.querySelectorAll('.form-step');
     const progressSteps = document.querySelectorAll('.progress-step');
+    const cartSummaryContainer = document.getElementById('cart-summary-container');
 
     let currentStep = 1;
 
+    function loadCartSummary() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length > 0 && cartSummaryContainer) {
+            let summaryHTML = '<ul>';
+            let subtotal = 0;
+            cart.forEach(item => {
+                summaryHTML += `<li>${item.name} - $${item.price.toFixed(2)}</li>`;
+                subtotal += item.price;
+            });
+            summaryHTML += '</ul>';
+            summaryHTML += `<p>Subtotal: $${subtotal.toFixed(2)}</p>`;
+            cartSummaryContainer.innerHTML = summaryHTML;
+        } else if (cartSummaryContainer) {
+            cartSummaryContainer.innerHTML = '<p>Your cart is empty.</p>';
+        }
+    }
+
     nextButtons.forEach(button => {
         button.addEventListener('click', () => {
-            if (validateStep(currentStep)) {
+            if (currentStep < 4 && validateStep(currentStep)) {
                 currentStep++;
                 updateFormSteps();
                 updateProgressBar();
+            } else if (currentStep === 4 && validateStep(currentStep)) {
+                // Handle payment
+                // Simulate payment processing
+                setTimeout(() => {
+                    alert('Payment successful!');
+                    localStorage.removeItem('cart'); // Clear cart after successful order
+                    window.location.href = 'index.html'; // Redirect to home page
+                }, 1000);
             }
         });
     });
@@ -25,19 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateFormSteps() {
-        formSteps.forEach(step => {
-            step.classList.remove('active');
+        formSteps.forEach((step, index) => {
+            step.classList.toggle('active', index + 1 === currentStep);
         });
-        document.getElementById(`step-${currentStep}`).classList.add('active');
     }
 
     function updateProgressBar() {
         progressSteps.forEach((step, index) => {
-            if (index < currentStep) {
-                step.classList.add('active');
-            } else {
-                step.classList.remove('active');
-            }
+            step.classList.toggle('active', index < currentStep);
         });
     }
 
@@ -47,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         inputs.forEach(input => {
             if (!input.value.trim()) {
                 isValid = false;
-                // Add some visual feedback for invalid fields
                 input.style.borderColor = 'red';
             } else {
                 input.style.borderColor = '#444';
@@ -56,19 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return isValid;
     }
 
-    // Handle final submission (payment)
-    const payButton = document.querySelector('#step-2 .next-step');
-    if (payButton) {
-        payButton.addEventListener('click', () => {
-            if (validateStep(2)) {
-                // Simulate payment processing
-                setTimeout(() => {
-                    document.getElementById('order-number').textContent = Math.floor(Math.random() * 900000) + 100000;
-                    currentStep++;
-                    updateFormSteps();
-                    updateProgressBar();
-                }, 1000);
-            }
-        });
-    }
+    // Initial load
+    loadCartSummary();
+    updateFormSteps();
+    updateProgressBar();
 });

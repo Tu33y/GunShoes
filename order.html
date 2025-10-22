@@ -22,27 +22,55 @@
             <div class="checkout-container">
                 <div class="progress-bar">
                     <div class="progress-step active" data-step="1">
-                        <span>Shipping</span>
+                        <span>Summary</span>
                         <div class="progress-dot"></div>
                     </div>
                     <div class="progress-step" data-step="2">
-                        <span>Payment</span>
+                        <span>Data</span>
                         <div class="progress-dot"></div>
                     </div>
                     <div class="progress-step" data-step="3">
-                        <span>Confirmation</span>
+                        <span>Shipping</span>
+                        <div class="progress-dot"></div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <span>Payment</span>
                         <div class="progress-dot"></div>
                     </div>
                 </div>
 
                 <form id="checkout-form" class="checkout-form">
-                    <!-- Step 1: Shipping Information -->
+                    <!-- Step 1: Summary -->
                     <div class="form-step active" id="step-1">
-                        <h2 class="step-title">Shipping Information</h2>
+                        <h2 class="step-title">Order Summary</h2>
+                        <div id="cart-summary-container" class="cart-summary-container">
+                            <!-- Summary content will be loaded here -->
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn next-step">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: User Data -->
+                    <div class="form-step" id="step-2">
+                        <h2 class="step-title">Your Data</h2>
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
                         </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn prev-step">Back</button>
+                            <button type="button" class="btn next-step">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Shipping Information -->
+                    <div class="form-step" id="step-3">
+                        <h2 class="step-title">Shipping Information</h2>
                         <div class="form-group">
                             <label for="address">Address</label>
                             <input type="text" id="address" name="address" required>
@@ -60,12 +88,13 @@
                             <input type="text" id="country" name="country" required>
                         </div>
                         <div class="form-navigation">
+                            <button type="button" class="btn prev-step">Back</button>
                             <button type="button" class="btn next-step">Next</button>
                         </div>
                     </div>
 
-                    <!-- Step 2: Payment Details -->
-                    <div class="form-step" id="step-2">
+                    <!-- Step 4: Payment Details -->
+                    <div class="form-step" id="step-4">
                         <h2 class="step-title">Payment Details</h2>
                         <div class="payment-options">
                             <button type="button" class="payment-btn" title="Pay with PayPal">
@@ -109,16 +138,6 @@
                             <button type="button" class="btn next-step">Pay Now</button>
                         </div>
                     </div>
-
-                    <!-- Step 3: Confirmation -->
-                    <div class="form-step" id="step-3">
-                        <h2 class="step-title">Order Confirmed</h2>
-                        <div class="confirmation-message">
-                            <p>Thank you for your purchase!</p>
-                            <p>Your order number is <span id="order-number"></span>.</p>
-                            <p>A confirmation email has been sent to your address.</p>
-                        </div>
-                    </div>
                 </form>
             </div>
         </section>
@@ -138,9 +157,6 @@
         </a>
         <a href="technology.html" class="dock-item" title="Technology">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-        </a>
-        <a href="order.html" class="dock-item" title="Order">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
         </a>
         <a href="newsletter.html" class="dock-item" title="Newsletter">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
